@@ -8,6 +8,8 @@ run_analysis <- function()
 
     #read table with all column names
     features<-read.table("UCI HAR Dataset/features.txt")[,2]
+    #remove parantheses in column names
+    features<-sapply(features, gsub, pattern="\\(|\\)", replacement="")
     
     #get a list of indices of the features list of features that are either a mean or a standard deviation
     selectedIndices <- c(grep("std", features), grep("mean", features))

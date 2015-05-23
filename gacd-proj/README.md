@@ -12,7 +12,7 @@ How the function works:
 
 Run_analyis() takes no arguments
 
-It reads a table with all column names from "UCI HAR Dataset/features.txt"
+It reads a table with all column names from "UCI HAR Dataset/features.txt" and subsequently removes the paranthesis, to get clean names.
 With the grep function, a list of indices of the features list of features that are either a mean or a standard deviation is obtained.
 This list is used for the colClass argument in read.table later on, to read only the relevant columns from the measurement data.
 
